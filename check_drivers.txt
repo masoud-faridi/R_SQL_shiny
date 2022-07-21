@@ -1,0 +1,6 @@
+check drivers
+
+https://stackoverflow.com/questions/52316708/r-and-rstudio-not-detecting-installed-postgresql-or-any-other-odbc-drivers
+
+
+odbc::odbcListDrivers()

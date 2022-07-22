@@ -1,0 +1,7 @@
+df1<-c(1:3,11:13)
+sprintf("%2d", as.numeric(df1))
+sprintf("%02d", as.numeric(df1))
+sprintf("%03d", as.numeric(df1))
+df1<-c(1:3,11:13,1.3,2.6,3.06,pi)
+sprintf("%f", as.numeric(df1))
+sprintf("%.02f", as.numeric(df1))

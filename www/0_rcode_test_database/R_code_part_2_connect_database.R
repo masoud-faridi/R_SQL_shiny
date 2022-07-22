@@ -1,6 +1,10 @@
 
 # check installation and configuration of postGreSQL
+
+#Check for PostgreSQL
+system("psql --version")
 Sys.which("psql.exe")
+#Check for Java
 Sys.which("java")
 
 # check installation of the odbc driver of postGreSQL
@@ -28,7 +32,34 @@ dbGetRowCount(rs_film)
 dbClearResult(rs_film)
 dbDisconnect(con)
 
+##############################
 
+dbname_temp<-"dvdrental"
+user_temp<-"postgres"
+password_temp<-"password"
+tryCatch({
+  
+  
+  con <- odbc::dbConnect(RPostgres::Postgres()
+                         ,user=user_temp,
+                         password=password_temp,
+                         dbname=dbname_temp
+                         ,host  = "localhost"
+                         ,port="5432"
+  )
+  
+  summary(con)
+  
+  print("Database Connected!")
+},
+error=function(cond) {
+  print("Unable to connect to Database.\n")
+  message(paste("\n ", cond))
+  
+})
+
+
+##############################
 
 ##########  all commands
 
@@ -261,9 +292,3 @@ db_con <- DBI::dbConnect(drv      = RMySQL::MySQL(),
                          host     = md$host, 
                          port     = md$port, 
                          dbname   = md$dbname)
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security

@@ -69,7 +69,7 @@ required_libraries<-c(
   "plotly",
   # Q
   # R
-  "RJDBC", "RPostgres","RSQLite",
+  "RJDBC","RMySQL", "RPostgres","RSQLite",
   # S
   "sqldf",
   # T
